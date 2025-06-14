@@ -1,0 +1,5 @@
+[submodule "robopianist"]
+	path = robopianist
+	url = https://github.com/google-research/robopianist.git
+	ignore = dirty
+	branch = main
