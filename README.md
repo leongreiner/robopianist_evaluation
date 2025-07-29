@@ -1,33 +1,29 @@
-what i did:
-- changed installation so no sudo is required
+# RoboPianist Evaluation Repository
 
+This repository provides an end-to-end evaluation pipeline for **RoboPianist**—the dexterous piano-playing agent introduced in the paper [RoboPianist: Dexterous Piano Playing with Deep Reinforcement Learning](https://arxiv.org/abs/2304.04150) by Kevin Zakka *et al.*. It was developed in the context of the **IN2107 – Seminar on Robotics Science and Systems Intelligence** at the Technical University of Munich (TUM).
 
+---
 
-# installation (adapted from original repo robopianist)
-bash install_deps.sh
-cd robopianist
-git submodule init && git submodule update
-conda create -n pianist python=3.10
-conda activate pianist
-conda install -y -c conda-forge pyaudio
-pip install -e ".[dev]"
-pip install gdown
+## Overview
 
-for test: make test
+RoboPianist is a reinforcement-learning–based system for generating dexterous piano-playing motions. This repo adapts the original implementation (in JAX) to PyTorch and provides an easy-to-use evaluation framework covering:
 
-Optional: Download additional soundfonts
-robopianist soundfont --download #(on active pianist conda env and choose SalamanderGrandPiano (option 1))
+1. **End-to-end quantitative evaluation** on the full **ROBOPIANIST-REPERTOIRE-150** dataset. [Evaluation.ipynb](Evaluation.ipynb)
 
-# dataset download
-download here: https://drive.google.com/file/d/1Y8gSUWDXT0fuyKuwkzlXwtdSp_ZcOEaw/view?usp=sharing (do not distribut, since of licensincs restrictions you useally have to create an account, just for the purpose of this seminar)
+2. **Generalization test** on a pop music snippet (“Golden Hour” by JVKE, bars 7 & 9) outside the classical training domain. [Evaluation_golden_hour.ipynb](Evaluation_golden_hour.ipynb)
 
-cd .. # (in main repo)
-mkdir -p datasets
-gdown --id 1Y8gSUWDXT0fuyKuwkzlXwtdSp_ZcOEaw -O datasets/PianoFingeringDataset_v1.2.zip
-unzip datasets/PianoFingeringDataset_v1.2.zip -d datasets/ && \
-rm datasets/PianoFingeringDataset_v1.2.zip
+---
 
-robopianist preprocess --dataset-dir datasets/PianoFingeringDataset_v1.2
-This will create a directory called pig_single_finger in robopianist_evaluation/robopianist/music/data.
+## Features
 
-to test: robopianist --check-pig-exists
+- **PyTorch Implementation**: Complete policy model rewritten in PyTorch for compatibility and ease of integration with modern research.  
+- **Single-Notebook Execution**: Each evaluation pipeline is encapsulated in a Jupyter notebook:
+  - `Evaluation.ipynb` for the full repertoire.  
+  - `Evaluation_golden_hour.ipynb` for the pop-music snippet.  
+- **Automated Fingering Integration**: Fingering annotations for the “Golden Hour” snippet provided as a single text file (`golden_hour_fingering.txt`).  
+- **No External MIDI Dependencies**: In the Golden Hour pipeline, all file handling is contained within the notebook, requiring only the provided fingering file.
+
+--- 
+
+## Installation
+- Follow the instructions in the Evaluation notebooks to install all dependencies.
