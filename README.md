@@ -26,4 +26,14 @@ RoboPianist is a reinforcement-learning–based system for generating dexterous 
 --- 
 
 ## Installation
-- Follow the instructions in the Evaluation notebooks to install all dependencies.
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/leongreiner/robopianist-evaluation.git
+   cd robopianist-evaluation
+   ```
+2. **Initialize Submodules**:
+   ```bash
+   git submodule init && git submodule update
+   ```
+3. **Install Dependencies**:
+   Follow the instructions in the Evaluation notebooks to install all dependencies.
