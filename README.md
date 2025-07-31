@@ -59,8 +59,8 @@ All results can be found in the [results](results) folder. The results are organ
 ![Golden Hour Training F1 over Time](results/golden_hour/golden_hour.gif)
 
 ### Training Results: “Happy Birthday”
-- Total Training Steps: X
-- Total Training Time: X on a single NVIDIA A100 GPU
+- Total Training Steps: 1.09 million
+- Total Training Time: 6:45h on a single NVIDIA A100 GPU
 
 ![F1 Score over Training Steps for “Happy Birthday”](results/happy_birthday/happy_birthday_f1+R_train.png)
 
