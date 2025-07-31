@@ -48,11 +48,7 @@ All results can be found in the [results](results) folder. The results are organ
 
 ![F1 Score over Training Steps for “Twinkle Twinkle”](results/twinkle_twinkle/twinkle_twinkle_f1+R_train.png)
 
-<video src="results/twinkle_twinkle/twinkle_twinkle_step_1460k_f1_0.9902.mp4"
-       controls
-       style="max-width:100%; max-height:400px;">
-  Your browser does not support the video tag.
-</video>
+![Twinkle Twinkle Training F1 over Time](results/twinkle_twinkle/twinkle_twinkle.gif)
 
 ### Training Results: “Golden Hour”
 - Total Training Steps: 2.76 million
@@ -60,11 +56,7 @@ All results can be found in the [results](results) folder. The results are organ
 
 ![F1 Score over Training Steps for “Golden Hour”](results/golden_hour/golden_hour_f1+R_train.png)
 
-<video src="results/golden_hour/golden_hour_step_2760k_f1_0.8013.mp4"
-       controls
-       style="max-width:100%; max-height:400px;">
-  Your browser does not support the video tag.
-</video>
+![Golden Hour Training F1 over Time](results/golden_hour/golden_hour.gif)
 
 ### Training Results: “Happy Birthday”
 - Total Training Steps: X
@@ -72,8 +64,4 @@ All results can be found in the [results](results) folder. The results are organ
 
 ![F1 Score over Training Steps for “Happy Birthday”](results/happy_birthday/happy_birthday_f1+R_train.png)
 
-<video src="results/happy_birthday/happy_birthday_step_1460k_f1_0.9902.mp4"
-       controls
-       style="max-width:100%; max-height:400px;">
-  Your browser does not support the video tag.
-</video>
+![Happy Birthday Training F1 over Time](results/happy_birthday/happy_birthday.gif)
