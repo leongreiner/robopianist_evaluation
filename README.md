@@ -64,4 +64,6 @@ All results can be found in the [results](results) folder. The results are organ
 
 ![F1 Score over Training Steps for “Happy Birthday”](results/happy_birthday/happy_birthday_f1+R_train.png)
 
+Low F1 performance probably because of a single-handed played song, in a dual hand environment.
+
 ![Happy Birthday Training F1 over Time](results/happy_birthday/happy_birthday.gif)
