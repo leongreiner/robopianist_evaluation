@@ -40,14 +40,40 @@ This repo adapts the original implementation (in JAX) to PyTorch and provides an
 --- 
 
 ## Results
-## Training Results: “Twinkle Twinkle”
+All results can be found in the [results](results) folder. The results are organized by song, with each song having its own subfolder containing the training metrics, plots and demo videos at different stages of the training. To have the actual sound included in the videos, you have to download them.
+
+### Training Results: “Twinkle Twinkle”
+- Total Training Steps: 1.46 million
+- Total Training Time: 8h on a single NVIDIA A100 GPU
 
 ![F1 Score over Training Steps for “Twinkle Twinkle”](results/twinkle_twinkle/twinkle_twinkle_f1+R_train.png)
 
+<video src="results/twinkle_twinkle/twinkle_twinkle_step_1460k_f1_0.9902.mp4"
+       controls
+       style="max-width:100%; max-height:400px;">
+  Your browser does not support the video tag.
+</video>
+
 ### Training Results: “Golden Hour”
+- Total Training Steps: 2.76 million
+- Total Training Time: 15h on a single NVIDIA A100 GPU
 
 ![F1 Score over Training Steps for “Golden Hour”](results/golden_hour/golden_hour_f1+R_train.png)
 
+<video src="results/golden_hour/golden_hour_step_2760k_f1_0.8013.mp4"
+       controls
+       style="max-width:100%; max-height:400px;">
+  Your browser does not support the video tag.
+</video>
+
 ### Training Results: “Happy Birthday”
+- Total Training Steps: X
+- Total Training Time: X on a single NVIDIA A100 GPU
 
 ![F1 Score over Training Steps for “Happy Birthday”](results/happy_birthday/happy_birthday_f1+R_train.png)
+
+<video src="results/happy_birthday/happy_birthday_step_1460k_f1_0.9902.mp4"
+       controls
+       style="max-width:100%; max-height:400px;">
+  Your browser does not support the video tag.
+</video>
