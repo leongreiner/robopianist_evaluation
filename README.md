@@ -1,27 +1,26 @@
 # RoboPianist Evaluation Repository
 
-This repository provides an end-to-end evaluation pipeline for **RoboPianist**—the dexterous piano-playing agent introduced in the paper [RoboPianist: Dexterous Piano Playing with Deep Reinforcement Learning](https://arxiv.org/abs/2304.04150) by Kevin Zakka *et al.*. It was developed in the context of the **IN2107 – Seminar on Robotics Science and Systems Intelligence** at the Technical University of Munich (TUM).
+This repository provides an end-to-end training and evaluation pipeline for **RoboPianist**—the dexterous piano-playing agent introduced in the paper [RoboPianist: Dexterous Piano Playing with Deep Reinforcement Learning](https://arxiv.org/abs/2304.04150) by Kevin Zakka *et al.*. Unlike the official JAX implementation, this version is written in PyTorch to align with the majority of recent reinforcement-learning research. It was developed in the context of the **IN2107 – Seminar on Robotics Science and Systems Intelligence** at the Technical University of Munich (TUM).
 
 ---
 
 ## Overview
 
-RoboPianist is a reinforcement-learning–based system for generating dexterous piano-playing motions. This repo adapts the original implementation (in JAX) to PyTorch and provides an easy-to-use evaluation framework covering:
+This repo adapts the original implementation (in JAX) to PyTorch and provides an easy-to-use training and evaluation pipeline:
 
 1. **End-to-end quantitative evaluation** on the full **ROBOPIANIST-REPERTOIRE-150** dataset. [Evaluation.ipynb](Evaluation.ipynb)
 
-2. **Generalization test** on a pop music snippet (“Golden Hour” by JVKE, bars 7 & 9) outside the classical training domain. [Evaluation_golden_hour.ipynb](Evaluation_golden_hour.ipynb)
+2. **Out-of-domain test** on a “Golden Hour” by JVKE snippet of bars 7 & 9 and of a "Happy Birthday" snippet. [Evaluation_custom.ipynb](Evaluation_custom.ipynb)
 
 ---
 
 ## Features
 
 - **PyTorch Implementation**: Complete policy model rewritten in PyTorch for compatibility and ease of integration with modern research.  
-- **Single-Notebook Execution**: Each evaluation pipeline is encapsulated in a Jupyter notebook:
-  - `Evaluation.ipynb` for the full repertoire.  
-  - `Evaluation_golden_hour.ipynb` for the pop-music snippet.  
-- **Automated Fingering Integration**: Fingering annotations for the “Golden Hour” snippet provided as a single text file (`golden_hour_fingering.txt`).  
-- **No External MIDI Dependencies**: In the Golden Hour pipeline, all file handling is contained within the notebook, requiring only the provided fingering file.
+- **Single-Notebook Execution**: Each complete training and evaluation pipeline is in a single Jupyter notebook:
+  - [Evaluation.ipynb](Evaluation.ipynb) for songs in the ROBOPIANIST-REPERTOIRE-150 dataset.  
+  - [Evaluation_custom.ipynb](Evaluation_custom.ipynb) for the own created fingering annotated songs.  
+    - Automated Fingering Integration: All file handling is contained within the notebook, requiring only the provided fingering file. ([golden_hour_fingering.txt](golden_hour_fingering.txt) & [happy_birthday_fingering.txt](happy_birthday_fingering.txt))
 
 --- 
 
@@ -36,4 +35,19 @@ RoboPianist is a reinforcement-learning–based system for generating dexterous 
    git submodule init && git submodule update
    ```
 3. **Install Dependencies**:
-   Follow the instructions in the Evaluation notebooks to install all dependencies.
+   Follow the instructions in the Evaluation notebooks ([Evaluation.ipynb](Evaluation.ipynb) or [Evaluation_custom.ipynb](Evaluation_custom.ipynb)) to install all dependencies.
+
+--- 
+
+## Results
+## Training Results: “Twinkle Twinkle”
+
+![F1 Score over Training Steps for “Twinkle Twinkle”](results/twinkle_twinkle/twinkle_twinkle_f1+R_train.png)
+
+### Training Results: “Golden Hour”
+
+![F1 Score over Training Steps for “Golden Hour”](results/golden_hour/golden_hour_f1+R_train.png)
+
+### Training Results: “Happy Birthday”
+
+![F1 Score over Training Steps for “Happy Birthday”](results/happy_birthday/happy_birthday_f1+R_train.png)

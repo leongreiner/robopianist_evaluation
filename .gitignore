@@ -196,3 +196,5 @@ cython_debug/
 # Custom
 datasets/
 runs/
+stuff/
+job_logs/
